@@ -46,6 +46,7 @@ const HomePage: React.FC = (props) => {
         answer,
         correct,
         correctAnswer: questions[number].correct_answer,
+        questionNr: number + 1,
       };
       dispatch(addAnswer(answerObject));
       setUserAnswers((prevState) => [...prevState, answerObject]);

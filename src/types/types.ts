@@ -5,6 +5,7 @@ export type AnswerObject = {
   answer: string;
   correct: boolean;
   correctAnswer: string;
+  questionNr: number;
 };
 
 export type Props = {

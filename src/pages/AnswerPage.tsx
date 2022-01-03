@@ -17,6 +17,7 @@ const AnswerPage: React.FC = () => {
               answer={item.answer}
               correct={item.correct}
               correctAnswer={item.correctAnswer}
+              questionNr={item.questionNr}
             />
           );
         })}
