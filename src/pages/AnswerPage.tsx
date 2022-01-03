@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppSelector } from "../store/hooks";
-import { CardsContainer, Wrapper } from "../style/AnswerPage.styles";
+import { Wrapper, CardsContainer } from "../style/AnswerPage.styles";
+import UserAnswersCard from "../compnents/UserAnswersCard";
 
 const AnswerPage: React.FC = () => {
   const answers = useAppSelector((state) => state.userAnswer.userAnswers);
@@ -9,19 +10,14 @@ const AnswerPage: React.FC = () => {
     <Wrapper>
       <h1>Answers page</h1>
       <CardsContainer>
-        {answers.map((item, index) => {
+        {answers.map((item) => {
           return (
-            <div
-              key={index}
-              style={{
-                height: "200px",
-                width: "200px",
-                background: "whitesmoke",
-                textAlign: "center",
-              }}
-            >
-              {index}
-            </div>
+            <UserAnswersCard
+              question={item.question}
+              answer={item.answer}
+              correct={item.correct}
+              correctAnswer={item.correctAnswer}
+            />
           );
         })}
       </CardsContainer>
@@ -30,6 +26,3 @@ const AnswerPage: React.FC = () => {
 };
 
 export default AnswerPage;
-
-// excluded function into another file
-// less conditions
